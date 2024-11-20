@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 
 export const router = createBrowserRouter([
+
   {
     path: "/",
     element: (
@@ -20,4 +21,6 @@ export const router = createBrowserRouter([
       </MainLayout>
     ),
   },
-]);
+], {
+  basename: "/service-project",
+});
