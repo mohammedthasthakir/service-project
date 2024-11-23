@@ -136,6 +136,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
+import ThemeToggleButton from "../ThemeToggleButton";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -189,7 +190,7 @@ const Header = () => {
           left: 0, // Align to the left
           right: 0, // Align to the right
           backgroundColor: "white", // Ensure background color is set
-          zIndex: 5000, // Ensure it stays above other content
+          zIndex: 1200, // Ensure it stays above other content
         }}
       >
         <Box sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}>
@@ -214,6 +215,7 @@ const Header = () => {
               </NavLink>
             ))}
           </Box>
+          {/* <ThemeToggleButton/> */}
         </Box>
         <Box sx={{ mx: 2 }}>
           <StyledTextField

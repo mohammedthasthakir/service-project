@@ -5,6 +5,8 @@ import {
   ImageList,
   ImageListItem,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import React from "react";
 import "./style.css";
@@ -44,6 +46,8 @@ const MainComponent = () => {
       title: "Painting & Water proofing",
     },
   ];
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.up("md"));
   return (
     <Grid2 container paddingY={6} columnSpacing={8}>
       <Grid2 size={{ xs: 12, md: 5.5 }}>
@@ -55,14 +59,14 @@ const MainComponent = () => {
           }}
           variant="h4"
         >
-          Home services at your <br /> doorstep
+          Home services at your {isMd ? <br /> : " "} doorstep
         </Typography>
         <Box
           sx={{
             border: "1px solid rgba(227, 227, 227, 1.00)",
             borderRadius: 5,
           }}
-          padding={3}
+          padding={{md:3,xs:2}}
           marginY={4}
         >
           <Typography
@@ -75,16 +79,17 @@ const MainComponent = () => {
           >
             What are you looking for?
           </Typography>
-          <Grid2 container spacing={2} mt={3}>
+          <Grid2 container spacing={1} mt={3}>
             {array?.map((item, i) => (
               <Grid2 key={i} size={{ xs: 4 }}>
                 <Box
                   sx={{
-                    backgroundColor: "rgba(245,245,245,1.00)",
+                    backgroundColor: "#FCE7F7",
                     alignItems: "center",
                     justifyContent: "center",
                     display: "flex",
                     py: 2,
+                    borderRadius:3
                   }}
                 >
                   <img src={item.img} />
